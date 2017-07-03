@@ -10,9 +10,24 @@ class Usuario{
         $this->clave=$clave;
     }
     
-    function VerificarPerfil(){
+    function AsiganrPerfil(){   
+        $oConn=new Conexion();
         
-        $sql="";
+        if ($oConn->Conectar()) {
+            $db = $oConn->objconn; 
+        } else { 
+            return false;
+        }
+        
+        $sql="SELECT perfil FROM usuario WHERE nombreUsuario = '$this->nombreUsuario'";
+        foreach ($db->query($sql) as $row){
+            $temp=$row['perfil'];  
+        }
+        if ($temp !==''){
+            $this->pefil=$temp;
+            return true;
+        }
+        return false;
         
     }
     
