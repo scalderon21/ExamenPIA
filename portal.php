@@ -7,6 +7,7 @@
 <html>
     <head>
         <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
         <meta charset="UTF-8">
         <title></title>
     </head>
@@ -17,10 +18,25 @@
         $usr = $_SESSION['Usuario'];
         echo "Usuario: ".$usr->nombreUsuario . "     Perfil: ". $usr->pefil;
         session_destroy();
+        ?>  
+        
+        <?php
+        
         
         if($usr->pefil == 'Administrador'){
             ?>
-                echo'<script> window.location="formularios/insertarUsuario.php"; </script> ';
+                <div><label></label>Seleccione:<select id="pcm" name="pcm">
+                    <option value="Paciente">Paciente</option>
+                    <option value="Usuario">Usuario</option>
+                    <option value="Medico">Medico</option>
+                </select>  
+                </div>
+                <div class="menu">
+                <a href="#" class="active">Home</a>
+                <a href="#">Listar</a>
+                <a href="formularios/insertarPaciente.php">Registrar</a>
+                <a href="#">Eliminar</a>
+                </div>
             <?php
         }
         
