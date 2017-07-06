@@ -15,8 +15,16 @@
         session_start();
         $usr=new Usuario;
         $usr = $_SESSION['Usuario'];
-        echo "Usuario: ".$usr->nombreUsuario . " Perfil: ". $usr->pefil;
+        echo "Usuario: ".$usr->nombreUsuario . "     Perfil: ". $usr->pefil;
         session_destroy();
+        
+        if($usr->pefil == 'Administrador'){
+            ?>
+                echo'<script> window.location="formularios/insertarUsuario.php"; </script> ';
+            <?php
+        }
+        
+        
         ?>
 
     </body>
