@@ -33,7 +33,7 @@ class Paciente{
         if ($this->VerificaPaciente()){
             return false;   
         }  
-        $sql="INSERT INTO paciente (rut,nombreCompleto,fechaNacimiento,sexo,direccion,telefono1,digitoVerificador) "
+        $sql="INSERT INTO paciente (rut,nombreCompleto,fechaNacimiento,sexo,direccion,telefono1,telefono2,digitoVerificador) "
             . "VALUES ('$this->rut','$this->nombreCompleto','$this->fechaNacimiento','$this->sexo','$this->direccion',"
             . "'$this->telefono1','$this->telefono2','$this->digitoVerificador')";
         
