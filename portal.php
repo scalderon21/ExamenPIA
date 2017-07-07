@@ -32,13 +32,54 @@
                 </select>  
                 </div>
                 <div class="menu">
-                <a href="#" class="active">Home</a>
+                    <a href="portal.php" class="active">Home</a>
                 <a href="#">Listar</a>
                 <a href="formularios/insertarPaciente.php">Registrar</a>
                 <a href="#">Eliminar</a>
                 </div>
+               
             <?php
+        } else if($usr->pefil == 'Secretaria'){
+            ?>
+                <div><label></label>Seleccione:<select id="pcm" name="pcm">
+                    <option value="Paciente">Paciente</option>
+                    <option value="Atencion">Usuario</option>
+                    <option value="Medico">Medico</option>
+                </select>  
+                </div>
+                <div class="menu">
+                    <a href="#" class="active">Home</a>
+                <a href="#">Listar</a>
+                <a href="#">Agendar</a>
+                <a href="#">Cambiar estado Atencion</a>
+                </div>
+            <?php     
+        } else if($usr->pefil == 'Director'){
+            ?>
+                <div><label></label>Seleccione:<select id="pcm" name="pcm">
+                    <option value="Paciente">Paciente</option>
+                    <option value="Atencion">Usuario</option>
+                    <option value="Medico">Medico</option>
+                </select>  
+                </div>
+                <div class="menu">
+                    <a href="#" class="active">Home</a>
+                <a href="#">Listar</a>
+                <a href="#">Consultar estadisticas del sistema</a>
+                </div>
+            <?php     
+        }else if($usr->pefil == 'Paciente'){
+            ?> 
+                <div class="menu">
+                    <a href="#" class="active">Home</a>
+                <a href="#">Listar</a>
+                <a href="#">Consultar atenciones</a>
+                </div>
+            <?php
+            
         }
+        
+       
         
         
         ?>

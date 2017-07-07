@@ -22,7 +22,7 @@
     <script>
     $(document).ready(function(){
             $("#enviar").click(function(){
-        
+                
                 if ($("#nombreUsuario").val()!=="" && $("#password").val()!==""){
                     ///*$("#frmusuario").submit();
                         $.ajax({url:"controlador/ValidaLogin.php"
