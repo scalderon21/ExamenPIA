@@ -34,7 +34,7 @@
                         && $("#apMaterno").val()!=="" && $("#sexo").val()!==""
                         && $("#direccion").val()!=="" && $("#telefono1").val()!==""
                         && $("#telefono2").val()!=="" && $("#fecha").val()!==""){
-                        $.ajax({url:"/controlador/ValidaPaciente.php"
+                        $.ajax({url:"../controlador/ValidaPaciente.php"
                             ,type:'post'
                             ,data:{'rut':$("#rut").val(),
                                 'nombre':$("#nombre").val(),
